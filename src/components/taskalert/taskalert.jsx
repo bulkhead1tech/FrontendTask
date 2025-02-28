@@ -7,7 +7,10 @@ const taskalert = ({update, message}) => {
         <div className='h-1/3 w-full flex justify-center items-center  '>
         <img className='h-full' src="/image.png" alt="" />
         </div>
-        <div className='h-1/3 w-full flex justify-center items-center'>{message}</div>
+        {message!=""?        <div className='h-1/3 w-full flex justify-center items-center'>{message}</div>:
+                <div className='h-1/3 w-full flex justify-center items-center'>wait!</div>
+
+}
         <div className='h-1/3 w-full flex justify-center items-center'>
         <button className='py-2 w-full rounded-lg text-white font-semibold bg-black cursor-pointer' onClick={update}>Back</button>
         </div>
