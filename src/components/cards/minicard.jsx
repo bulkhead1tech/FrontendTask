@@ -7,17 +7,17 @@ const minicard = ({ id, priority, title, desc, date }) => {
   const handle = async (e) => {
     const request = e.target.value;
     if(request!=10){
-      const response = await fetch(`https://backendtask-lo61.onrender.com/update`, {
+      const response = await fetch(`https://backendtask-lo61.onrender.com/tasks/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ request, id }),
+        body: JSON.stringify({ request}),
       });
       const data = await response.json();
       alert(data.message);
     }else{
-      const response = await fetch(`https://backendtask-lo61.onrender.com/delete/${id}`, {
+      const response = await fetch(`https://backendtask-lo61.onrender.com/tasks/${id}`, {
         method: "DELETE",
       });
       const data = await response.json();

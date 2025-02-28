@@ -9,7 +9,7 @@ const cards2 = ({ value }) => {
     const fetcher = async () => {
       try {
         const response = await fetch(
-          `https://backendtask-lo61.onrender.com/data/?progress=true&search=${value}`
+          `https://backendtask-lo61.onrender.com/tasks/?progress=true&search=${value}`
         );
         const data = await response.json();
         setdata(data.data);

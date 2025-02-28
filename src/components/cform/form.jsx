@@ -34,7 +34,7 @@ const Form = ({ update }) => {
     };
     const fetcher = async () => {
       try {
-        const response = await fetch("https://backendtask-lo61.onrender.com/create", {
+        const response = await fetch("https://backendtask-lo61.onrender.com/tasks", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

@@ -8,7 +8,7 @@ const cards = ({ value }) => {
     const fetcher = async () => {
       try {
         const response = await fetch(
-          `https://backendtask-lo61.onrender.com/data?priority=0&priority=1&search=${value}`
+          `https://backendtask-lo61.onrender.com/tasks?priority=0&priority=1&search=${value}`
         );
         const data = await response.json();
         setdata(data.data);
@@ -32,7 +32,7 @@ const cards = ({ value }) => {
       <div className="flex justify-center">
         <div className="w-4/5 bg-[#5030E5] h-1"></div>
       </div>
-      <div className=" h-[calc(100%-3rem)] flex flex-col overflow-x-hidden px-8 py-5 gap-y-6 overflow-y-auto">
+      <div className=" h-[calc(100%-3rem)] flex hide-scrollbar flex-col overflow-x-hidden px-8 py-5 gap-y-6 overflow-y-auto">
         {data.length != 0 ? (
           <>
             {data.map((data) => (
