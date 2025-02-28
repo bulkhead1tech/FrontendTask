@@ -6,6 +6,24 @@ const minicard = ({ id, priority, title, desc, date }) => {
   const [priorit, setpriority] = useState("");
   const handle = async (e) => {
     const request = e.target.value;
+    if(request!=10){
+      const response = await fetch(`https://backendtask-lo61.onrender.com/update`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ request, id }),
+      });
+    }else{
+      const response = await fetch(`https://backendtask-lo61.onrender.com/delete/${id}`, {
+        method: "DELETE",
+      });
+    }
+    const data = await response.json();
+    window.location.reload();
+  };
+  const deletehandle = async (e) => {
+    const request = e.target.value;
     const response = await fetch(`https://backendtask-lo61.onrender.com/update`, {
       method: "PUT",
       headers: {
@@ -64,6 +82,7 @@ const minicard = ({ id, priority, title, desc, date }) => {
           </option>
           <option value="2">done</option>
           <option value="4">Start</option>
+          <option value="10">Delete</option>
         </select>
       </div>
 
