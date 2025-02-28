@@ -20,6 +20,7 @@ const minicard = ({ id, priority, title, desc, date }) => {
       });
     }
     const data = await response.json();
+    alert(data.message);
     window.location.reload();
   };
   const deletehandle = async (e) => {
