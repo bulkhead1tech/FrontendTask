@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+.flatpickr-calendar {
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  .flatpickr-day.selected {
+    background-color: black !important; 
+    border-color: black !important;
+  }
+  
+  .flatpickr-day:hover {
+    background-color: white !important; 
+    color: black;
+  }
