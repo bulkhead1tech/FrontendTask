@@ -74,8 +74,8 @@ const minicard = ({ id, priority, title, desc, date }) => {
           <option value="" disabled selected>
             ...
           </option>
-          <option value="2">done</option>
-          <option value="4">Start</option>
+        {priority!=3 &&<> <option value="2">done</option>
+          <option value="4">Start</option></>}
           <option value="10">Delete</option>
         </select>
       </div>
