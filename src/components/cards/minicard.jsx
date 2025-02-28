@@ -14,14 +14,18 @@ const minicard = ({ id, priority, title, desc, date }) => {
         },
         body: JSON.stringify({ request, id }),
       });
+      const data = await response.json();
+      alert(data.message);
+      window.location.reload();
     }else{
       const response = await fetch(`https://backendtask-lo61.onrender.com/delete/${id}`, {
         method: "DELETE",
       });
-    }
-    const data = await response.json();
+      const data = await response.json();
     alert(data.message);
     window.location.reload();
+    }
+    
   };
   const deletehandle = async (e) => {
     const request = e.target.value;
